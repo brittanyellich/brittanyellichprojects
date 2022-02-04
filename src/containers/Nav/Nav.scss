@@ -1,0 +1,85 @@
+@import "../../App.scss";
+
+.light .Nav {
+  background-color: $header-background-color;
+}
+
+.dark .Nav {
+  background-color: $header-background-color-dark;
+}
+
+.Nav {
+  height: 3.5rem;
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  padding: 0 1rem 0 10vh;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: $tablet) {
+    padding-left: 2rem;
+  }
+}
+
+.Nav:hover {
+  box-shadow: 0 0 1.5rem 0 rgb(0 0 0 / 10%);
+}
+
+.Nav__site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  min-width: 10%;
+  flex: 10;
+  line-height: 3.5rem;
+  cursor: pointer;
+
+  @media (max-width: $tablet) {
+    max-width: 80%;
+  }
+}
+
+.Nav__site-title a {
+  text-decoration: none;
+}
+
+.Nav_desktop-nav {
+  display: none;
+
+  @media (min-width: $mobile) {
+    display: block;
+  }
+}
+
+.Nav_mobile-nav {
+  display: block;
+  @media (min-width: $mobile) {
+    display: none;
+  }
+}
+
+.Nav_nav-links {
+  line-height: 3.5rem;
+}
+
+.Nav_nav-links-item {
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+.Nav_nav-links-delimiter {
+  border-left: 1.5px solid #161209;
+}
+
+.Nav_nav-theme-switch {
+  transform: rotate(225deg);
+  cursor: pointer;
+}
+
+.light .Nav_nav-theme-switch:hover {
+  color: $global-link-hover-color;
+}
+
+.dark .Nav_nav-theme-switch:hover {
+  color: $global-link-hover-color-dark;
+}

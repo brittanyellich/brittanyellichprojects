@@ -1,0 +1,36 @@
+@import "../../App.scss";
+
+.nav-toggle {
+  line-height: 4rem;
+  cursor: pointer;
+  transition: width 0.3s ease;
+
+  &__span {
+    display: block;
+    margin-bottom: 0.5rem;
+    width: 1.5rem;
+    height: 2px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__span-close:first-child {
+    transform: rotate(45deg) translate(0.4rem, 0.5rem);
+  }
+
+  &__span-close:nth-child(2) {
+    opacity: 0;
+  }
+
+  &__span-close:last-child {
+    transform: rotate(-45deg) translate(0.4rem, -0.5rem);
+  }
+
+  .light &__span {
+    background: $global-font-color;
+  }
+
+  .dark &__span {
+    background: $global-font-color-dark;
+  }
+}
