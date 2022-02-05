@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import ColorGameBlock from "../../components/ColorGameBlock/ColorGameBlock";
 
 import "./ColorGame.scss";
-import ColorGameBlock from "../../components/ColorGameBlock/ColorGameBlock";
 
 const RGB_MAX = 255;
 
@@ -59,7 +59,14 @@ function ColorGame() {
   };
 
   return (
-    <div className="color-game">
+    <div
+      className="color-game"
+      style={{
+        background: hasWon
+          ? `rgb(${colors[correctIndex][0]}, ${colors[correctIndex][1]}, ${colors[correctIndex][2]})`
+          : "transparent",
+      }}
+    >
       <div className="color-game__title">
         <div className="color-game__title-text">THE GREAT</div>
         <div className="color-game__title-color-text">
