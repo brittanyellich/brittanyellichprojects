@@ -12,9 +12,6 @@ jobs:
     env:
       NODE_VERSION: "14"
 
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-
     steps:
       - uses: actions/checkout@v2
       - name: Configure AWS Credentials
