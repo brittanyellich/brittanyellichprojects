@@ -1,14 +1,14 @@
 @import "../../App.scss";
 
-.light .Nav {
+.light .nav {
   background-color: $header-background-color;
 }
 
-.dark .Nav {
+.dark .nav {
   background-color: $header-background-color-dark;
 }
 
-.Nav {
+.nav {
   height: 3.5rem;
   transition: box-shadow 0.3s ease;
   display: flex;
@@ -21,11 +21,11 @@
   }
 }
 
-.Nav:hover {
+.nav:hover {
   box-shadow: 0 0 1.5rem 0 rgb(0 0 0 / 10%);
 }
 
-.Nav__site-title {
+.nav__site-title {
   font-size: 1.5rem;
   font-weight: bold;
   margin-right: 0.5rem;
@@ -39,11 +39,11 @@
   }
 }
 
-.Nav__site-title a {
+.nav__site-title a {
   text-decoration: none;
 }
 
-.Nav_desktop-nav {
+.nav_desktop-nav {
   display: none;
 
   @media (min-width: $mobile) {
@@ -51,35 +51,67 @@
   }
 }
 
-.Nav_mobile-nav {
+.nav_mobile-nav {
   display: block;
   @media (min-width: $mobile) {
     display: none;
   }
 }
 
-.Nav_nav-links {
+.nav_nav-links {
   line-height: 3.5rem;
 }
 
-.Nav_nav-links-item {
+.nav_nav-links-item {
   margin: 0 0.5rem;
   text-decoration: none;
 }
 
-.Nav_nav-links-delimiter {
+.nav_nav-links-delimiter {
   border-left: 1.5px solid #161209;
 }
 
-.Nav_nav-theme-switch {
+.nav_nav-theme-switch {
   transform: rotate(225deg);
   cursor: pointer;
 }
 
-.light .Nav_nav-theme-switch:hover {
+.light .nav_nav-theme-switch:hover {
   color: $global-link-hover-color;
 }
 
-.dark .Nav_nav-theme-switch:hover {
+.dark .nav_nav-theme-switch:hover {
   color: $global-link-hover-color-dark;
+}
+
+.nav_mobile-nav-menu {
+  z-index: 10;
+  position: absolute;
+  top: 3.5rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.light .nav_mobile-nav-menu {
+  border-top: 2px solid $global-border-color;
+  background: $header-background-color;
+}
+
+.dark .nav_mobile-nav-menu {
+  border-top: 2px solid $global-border-color-dark;
+  background: $header-background-color-dark;
+}
+
+.nav_mobile-nav-menu-item {
+  line-height: 2.5rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav_mobile-nav-menu-item:last-child {
+  height: 2.5rem;
 }

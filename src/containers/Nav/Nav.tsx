@@ -13,32 +13,32 @@ function Nav() {
   const [toggleOpen, setToggleOpen] = React.useState(false);
 
   return (
-    <div className="Nav">
-      <div className="Nav__site-title">
+    <div className="nav">
+      <div className="nav__site-title">
         <a href="https://brittanyellich.com/">Brittany Ellich</a>
       </div>
-      <div className="Nav_nav-links Nav_desktop-nav">
+      <div className="nav_nav-links nav_desktop-nav">
         <a
-          className="Nav_nav-links-item"
+          className="nav_nav-links-item"
           href="https://brittanyellich.com/posts/"
         >
           Posts
         </a>
         <a
-          className="Nav_nav-links-item"
+          className="nav_nav-links-item"
           href="https://brittanyellich.com/tags/"
         >
           Tags
         </a>
-        <span className="Nav_nav-links-item Nav_nav-links-delimiter" />
-        <a className="Nav_nav-links-item" href="https://brittanyellich.com/">
-          <FontAwesomeIcon icon={faSearch} className="Nav_nav-links-item" />
+        <span className="nav_nav-links-item nav_nav-links-delimiter" />
+        <a className="nav_nav-links-item" href="https://brittanyellich.com/">
+          <FontAwesomeIcon icon={faSearch} className="nav_nav-links-item" />
         </a>
         <ThemeContext.Consumer>
           {({ changeTheme }) => (
             <FontAwesomeIcon
               icon={faAdjust}
-              className="Nav_nav-links-item Nav_nav-theme-switch"
+              className="nav_nav-links-item nav_nav-theme-switch"
               onClick={() => {
                 setDarkMode(!darkMode);
                 changeTheme(darkMode ? themes.light : themes.dark);
@@ -47,11 +47,39 @@ function Nav() {
           )}
         </ThemeContext.Consumer>
       </div>
-      <div className="Nav_mobile-nav">
+      <div className="nav_mobile-nav">
         <NavToggle
           isToggled={toggleOpen}
           onClick={() => setToggleOpen(!toggleOpen)}
         />
+        {toggleOpen && (
+          <div className="nav_mobile-nav-menu">
+            <a
+              className="nav_mobile-nav-menu-item"
+              href="https://brittanyellich.com/posts/"
+            >
+              Posts
+            </a>
+            <a
+              className="nav_mobile-nav-menu-item"
+              href="https://brittanyellich.com/tags/"
+            >
+              Tags
+            </a>
+            <ThemeContext.Consumer>
+              {({ changeTheme }) => (
+                <FontAwesomeIcon
+                  icon={faAdjust}
+                  className="nav_mobile-nav-menu-item nav_nav-theme-switch"
+                  onClick={() => {
+                    setDarkMode(!darkMode);
+                    changeTheme(darkMode ? themes.light : themes.dark);
+                  }}
+                />
+              )}
+            </ThemeContext.Consumer>
+          </div>
+        )}
       </div>
     </div>
   );
