@@ -22,7 +22,7 @@ const generateRandomRGB = (): number[] => {
   const first = generateRandomColorNumber();
   const second = generateRandomColorNumber();
   const third = generateRandomColorNumber();
-  console.log(first);
+
   return [first, second, third];
 };
 
@@ -31,7 +31,7 @@ const generateRandomRGBArray = (colors: number) => {
   for (let i = 0; i < colors; i++) {
     colorsArray.push(generateRandomRGB());
   }
-  console.log(colorsArray);
+
   return colorsArray;
 };
 
@@ -81,7 +81,12 @@ function ColorGame() {
             key={index}
             colors={color}
             isCorrect={index === correctIndex}
-            onClick={() => console.log("clicked on: ", index)}
+            onClick={() => {
+              if (index === correctIndex) {
+                setHasWon(true);
+              }
+              setHasClicked(true);
+            }}
           />
         ))}
       </div>
