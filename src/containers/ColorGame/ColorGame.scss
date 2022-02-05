@@ -1,7 +1,17 @@
+@import "../../App.scss";
+
 .color-game {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  padding-top: 1rem;
+
+  @media (min-width: $mobile) {
+    margin-top: 2rem;
+    border-radius: 6px;
+    padding: none;
+  }
 
   &__title {
     text-align: center;
@@ -16,8 +26,16 @@
     }
   }
 
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 2rem 0;
+  }
+
   &__play-area {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
   }
 }

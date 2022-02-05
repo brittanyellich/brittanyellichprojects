@@ -1,0 +1,21 @@
+@import "../../App.scss";
+
+.button {
+  min-width: 150px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.light .button {
+  background-color: $global-background-color-dark;
+  border-color: $global-background-color-dark;
+  color: $global-font-color-dark;
+}
+
+.dark .button {
+  background-color: $global-background-color;
+  border-color: $global-background-color;
+  color: $global-font-color;
+}

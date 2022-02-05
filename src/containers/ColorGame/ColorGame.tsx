@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ColorGameBlock from "../../components/ColorGameBlock/ColorGameBlock";
 
 import "./ColorGame.scss";
+import Button from "../../components/Button/Button";
 
 const RGB_MAX = 255;
 
@@ -43,14 +44,17 @@ function ColorGame() {
   );
   const [hasWon, setHasWon] = useState(false);
   const [hasClicked, setHasClicked] = useState(false);
+  const [resetAll, setResetAll] = useState(false);
 
   const reset = () => {
     setColors(generateRandomRGBArray(difficulty));
     setCorrectIndex(generateRandomIndex(difficulty));
     setHasWon(false);
     setHasClicked(false);
+    setResetAll(true);
   };
 
+  //TODO: Fix race condition in initial difficulty setting
   const changeDifficulty = () => {
     setDifficulty(
       difficulty === DIFFICULTY.HARD ? DIFFICULTY.EASY : DIFFICULTY.HARD
@@ -76,11 +80,16 @@ function ColorGame() {
         <div className="color-game__title-text">COLOR GAME</div>
       </div>
       <div className="color-game__controls">
-        <button onClick={reset}>Reset</button>
+        <Button text="Reset" onClick={reset} />
         <div className="color-game__controls-feedback-text">
-          {hasClicked ? (hasWon ? "Congrats!" : "Try again!") : null}
+          {hasClicked ? (hasWon ? "Congrats!" : "Try again!") : ""}
         </div>
-        <button onClick={changeDifficulty}>Change Difficulty</button>
+        <Button
+          onClick={changeDifficulty}
+          text={
+            difficulty === DIFFICULTY.HARD ? "Make it easier" : "Make it harder"
+          }
+        />
       </div>
       <div className="color-game__play-area">
         {colors.map((color, index) => (
@@ -93,6 +102,10 @@ function ColorGame() {
                 setHasWon(true);
               }
               setHasClicked(true);
+            }}
+            reset={resetAll}
+            onReset={() => {
+              setResetAll(false);
             }}
           />
         ))}

@@ -26,6 +26,18 @@ function Nav() {
         </a>
         <a
           className="nav_nav-links-item"
+          href="https://brittanyellich.com/projects/"
+        >
+          Projects
+        </a>
+        <a
+          className="nav_nav-links-item"
+          href="https://brittanyellich.com/book-reviews/"
+        >
+          Book Reviews
+        </a>
+        <a
+          className="nav_nav-links-item"
           href="https://brittanyellich.com/tags/"
         >
           Tags
@@ -59,6 +71,18 @@ function Nav() {
               href="https://brittanyellich.com/posts/"
             >
               Posts
+            </a>
+            <a
+              className="nav_mobile-nav-menu-item"
+              href="https://brittanyellich.com/projects/"
+            >
+              Projects
+            </a>
+            <a
+              className="nav_mobile-nav-menu-item"
+              href="https://brittanyellich.com/book-reviews/"
+            >
+              Book Reviews
             </a>
             <a
               className="nav_mobile-nav-menu-item"

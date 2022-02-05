@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./ColorGameBlock.scss";
 
@@ -6,12 +6,21 @@ interface Props {
   colors: number[];
   onClick: () => void;
   isCorrect: boolean;
+  reset: boolean;
+  onReset: () => void;
 }
 
-function ColorGameBlock({ colors, onClick, isCorrect }: Props) {
+function ColorGameBlock({ colors, onClick, isCorrect, reset, onReset }: Props) {
   const [backgroundStyle, setBackgroundStyle] = useState(
     `rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`
   );
+
+  useEffect(() => {
+    if (reset) {
+      setBackgroundStyle(`rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`);
+      onReset();
+    }
+  }, [reset, colors, onReset]);
 
   return (
     <div
