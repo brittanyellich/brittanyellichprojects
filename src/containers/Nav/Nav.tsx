@@ -32,9 +32,9 @@ function Nav() {
         </a>
         <a
           className="nav_nav-links-item"
-          href="https://brittanyellich.com/book-reviews/"
+          href="https://brittanyellich.com/notes/"
         >
-          Book Reviews
+          Notes
         </a>
         <a
           className="nav_nav-links-item"
@@ -80,9 +80,9 @@ function Nav() {
             </a>
             <a
               className="nav_mobile-nav-menu-item"
-              href="https://brittanyellich.com/book-reviews/"
+              href="https://brittanyellich.com/notes/"
             >
-              Book Reviews
+              Notes
             </a>
             <a
               className="nav_mobile-nav-menu-item"
