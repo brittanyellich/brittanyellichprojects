@@ -1,4 +1,16 @@
-.color-game-block {
+.dark {
+  .color-game-block-accessible {
+    border: 4px solid #a9a9b3;
+  }
+}
+
+.light {
+  .color-game-block-accessible {
+    border: 4px solid #161209;
+  }
+}
+
+.color-game-block-accessible {
   width: 180px;
   height: 180px;
   border-radius: 15%;

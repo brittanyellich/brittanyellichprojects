@@ -10,6 +10,7 @@ function Projects() {
     <div className="projects">
       <Button text="Color Game" onClick={() => navigate("/color-game")} />
       <Button text="Color Game Accessible" onClick={() => navigate("/color-game-accessible")} />
+      <Button text="Color Game Accessible Demo" onClick={() => navigate("/color-game-accessible-demo")} />
       <Button text="Habit Tracker" onClick={() => navigate("/habit-tracker")} />
     </div>
   );
