@@ -9,6 +9,7 @@ function Projects() {
   return (
     <div className="projects">
       <Button text="Color Game" onClick={() => navigate("/color-game")} />
+      <Button text="Color Game Accessible" onClick={() => navigate("/color-game-accessible")} />
       <Button text="Habit Tracker" onClick={() => navigate("/habit-tracker")} />
     </div>
   );

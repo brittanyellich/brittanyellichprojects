@@ -1,0 +1,41 @@
+import React, { useState, useEffect } from "react";
+
+import "./ColorGameBlockAccessible.scss";
+
+interface Props {
+  colors: number[];
+  onClick: () => void;
+  isCorrect: boolean;
+  reset: boolean;
+  onReset: () => void;
+}
+
+function ColorGameBlockAccessible({ colors, onClick, isCorrect, reset, onReset }: Props) {
+  const [backgroundStyle, setBackgroundStyle] = useState(
+    `rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`
+  );
+
+  useEffect(() => {
+    if (reset) {
+      setBackgroundStyle(`rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`);
+      onReset();
+    }
+  }, [reset, colors, onReset]);
+
+  return (
+    <div
+      className="color-game-block"
+      style={{
+        background: backgroundStyle,
+      }}
+      onClick={() => {
+        if (!isCorrect) {
+          setBackgroundStyle("transparent");
+        }
+        onClick();
+      }}
+    ></div>
+  );
+}
+
+export default ColorGameBlockAccessible;

@@ -1,18 +1,22 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import ColorGame from "./ColorGame/ColorGame";
+import ColorGameAccessible from "./ColorGameAccessible/ColorGameAccessible";
 import HabitTracker from "./HabitTracker/HabitTracker";
 import FourOhFour from "./404/404";
 
 const PROJECTS = {
   COLOR_GAME: "color-game",
   HABIT_TRACKER: "habit-tracker",
+  COLOR_GAME_ACCESSIBLE: "color-game-accessible",
 };
 
 const getProject = (projectName: string) => {
   switch (projectName) {
     case PROJECTS.COLOR_GAME:
       return <ColorGame />;
+    case PROJECTS.COLOR_GAME_ACCESSIBLE:
+      return <ColorGameAccessible />;
     case PROJECTS.HABIT_TRACKER:
       return <HabitTracker />;
     default:
