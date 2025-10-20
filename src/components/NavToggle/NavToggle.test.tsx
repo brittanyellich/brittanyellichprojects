@@ -139,7 +139,7 @@ describe('NavToggle Component', () => {
     it('does not respond to keyboard events by default (div without button role)', async () => {
       render(<NavToggle isToggled={false} onClick={mockOnClick} />);
       
-      const navToggle = document.querySelector('.nav-toggle');
+      const navToggle = document.querySelector('.nav-toggle') as HTMLElement;
       navToggle?.focus();
       
       // Simulate keyboard events - should not trigger onClick since it's a div
@@ -152,7 +152,7 @@ describe('NavToggle Component', () => {
     it('is not naturally focusable as a div element', () => {
       render(<NavToggle isToggled={false} onClick={mockOnClick} />);
       
-      const navToggle = document.querySelector('.nav-toggle');
+      const navToggle = document.querySelector('.nav-toggle') as HTMLElement;
       expect(navToggle?.tabIndex).toBe(-1); // div elements are not naturally focusable
     });
 
@@ -246,7 +246,7 @@ describe('NavToggle Component', () => {
     it('has accessibility concerns as a clickable div without proper semantics', () => {
       render(<NavToggle isToggled={false} onClick={mockOnClick} />);
       
-      const navToggle = document.querySelector('.nav-toggle');
+      const navToggle = document.querySelector('.nav-toggle') as HTMLElement;
       expect(navToggle).toBeVisible();
       
       // Note: This test documents the accessibility issue
